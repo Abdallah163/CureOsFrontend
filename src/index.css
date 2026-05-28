@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --brand: #0d9488;
+  --brand-dark: #0f766e;
+  --brand-light: #ccfbf1;
+  --surface: #f8fafc;
+  --card: #ffffff;
+}
+
+body {
+  direction: rtl;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  background: var(--surface);
+  color: #1e293b;
+}
+
+@layer components {
+  .auth-page {
+    @apply min-h-screen flex items-center justify-center p-4;
+    background:
+      radial-gradient(ellipse at 20% 20%, rgba(13, 148, 136, 0.12) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 80%, rgba(99, 102, 241, 0.1) 0%, transparent 50%),
+      linear-gradient(160deg, #f0fdfa 0%, #f8fafc 40%, #eef2ff 100%);
+  }
+
+  .auth-card {
+    @apply bg-white rounded-2xl shadow-xl p-8 w-full border border-slate-100/80;
+  }
+
+  .auth-logo {
+    @apply w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 text-3xl shadow-lg;
+    background: linear-gradient(135deg, var(--brand) 0%, #6366f1 100%);
+  }
+
+  .auth-banner {
+    @apply rounded-xl p-4 text-teal-800 text-sm;
+    background: linear-gradient(135deg, #ccfbf1 0%, #e0e7ff 100%);
+    border: 1px solid #99f6e4;
+  }
+
+  .auth-error {
+    @apply bg-red-50 border border-red-200 text-red-700 rounded-xl p-3 text-sm;
+  }
+
+  .auth-btn {
+    @apply text-white py-3 rounded-xl font-semibold text-sm shadow-md transition disabled:opacity-60;
+    background: linear-gradient(135deg, var(--brand) 0%, var(--brand-dark) 100%);
+  }
+
+  .auth-btn:hover:not(:disabled) {
+    filter: brightness(1.05);
+  }
+}
